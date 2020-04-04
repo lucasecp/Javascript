@@ -1,0 +1,48 @@
+*{
+box-sizing: border-box;
+font-family:'Roboto'
+}
+body{
+    background-color:rgb(116, 123, 202);
+    display: grid;
+    justify-content: center;
+}
+.tabela{
+    display:flex;
+}
+section{
+    background-color: aliceblue;
+    padding: 30px;
+}
+form{
+    display:grid;
+    grid-template-columns: 300px;
+    justify-content: center;
+}
+input{
+    margin-bottom:10px;
+    font-weight: 500;
+    font: icon;
+    padding: 5px 10px;
+}
+input[type="button"]{
+    margin-top: 5px;
+    background-color: rgb(66, 68, 190);
+    height:30px;
+    color:#fff;
+}
+h1{
+    text-align:center;
+}
+li{
+    list-style: none;
+}
+section div,h2{ 
+    text-align:center;
+}
+input[type="button"]:hover{
+    background-color: rgb(34, 36, 153);
+}
+
+
+
