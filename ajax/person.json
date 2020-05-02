@@ -1,0 +1,28 @@
+{
+  "persons": [
+       {"id":0,"name": "Harry Potter"},
+       {"id":1,"name": "Hermione"},
+       {"id":2,"name": "Ronald Wesley"},
+       {"id":3,"name": "Draco Malfoy"},
+       {"id":4,"name": "Sirius Black"},
+       {"id":5,"name": "Moly wesley"},
+       {"id":6,"name": "Remo Lupin"},
+       {"id":7,"name": "Severus Snape"},
+       {"id":8,"name": "Albus Dumbledore"},
+       {"id":9,"name": "Minerva"},
+       {"id":10,"name": "Hagrid"},
+       {"id":11,"name": "Gellert Grindelwald"},
+       {"id":12,"name": "Belatrix Lestrange"},
+       {"id":13,"name": "Lord Voldemort"},
+       {"id":14,"name": "Nagini"},
+       {"id":15,"name": "Rabicho"},
+       {"id":16,"name": "Lucio malfoy"},
+       {"id":17,"name": "Tina"},
+       {"id":18,"name": "Queenie"},
+       {"id":19,"name": "Jacob"},
+       {"id":20,"name": "Teseus Scamander"},
+       {"id":21,"name": "Leta Lestrange"},
+       {"id":22,"name": "Newt Scamander"},
+       {"id":23,"name": "Credence"}
+]
+}

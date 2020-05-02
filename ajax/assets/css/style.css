@@ -1,0 +1,33 @@
+*{
+  font-family: Roboto;
+}
+
+body{
+  background-color:rgb(17, 86, 102);
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+section{
+  background-color: white;
+  padding: 5%;
+  width:50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+  border-radius: 15px;
+}
+input[type="button"]{
+  width:150px;
+  height: 40px;
+  background-color: rgb(185, 177, 177);
+  outline: none;
+}
+.resultado{
+  font-size: 2em;
+  padding: 10px;
+  margin-top:20px
+}
