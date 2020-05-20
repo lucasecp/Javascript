@@ -3,9 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gerador de senhas</title>
 </head>
-<body> 
+<body>
+    <main>
+        <div class='title'>Gerador de senhas</div>
+        <div class='password'></div>
+
+        <span>
+            <label for="quantidade">Quantidade de caracteres</label>
+            <input type="number" name="quantidade" >
+        </span>
+
+        <span>
+             <label for="numeros">Adicionar números</label>
+            <input type="checkbox" name="numeros" checked>
+        </span>
+
+       <span>
+        <label for="letraMai">Letra maiúsculas</label>
+        <input type="checkbox" name="letraMai">
+      </span>
+        
+        <span> 
+            <label for="letraMin">Letra minúscula</label>
+            <input type="checkbox" name="letraMin" >
+        </span>
+
+     <button>Gerar</button>
+       
+     
+    </main>
 </body>
 <script src="./assets/js/bundle.js"></script>
 </html>
