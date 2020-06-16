@@ -7,7 +7,7 @@ require('dotenv').config()
 const mongoose = require('mongoose')
 const helmet= require('helmet')
 const csrf = require('csurf')
-const {checkCRSUF,csrfMiddlware} = require('./src/middleware/middleware')
+const {checkCRSUF,csrfMiddlware, middlewareGlobal} = require('./src/middleware/middleware')
 
 
 const session = require('express-session')
@@ -18,10 +18,10 @@ const flash= require('connect-flash')
 const sessionOptions = session({
     secret: process.env.secret,
     store: new mongoStore({mongooseConnection: mongoose.connection}),
-    resave: false,
+    resave: false,    
     saveUninitialized:false,
     coockie:{
-        maxAge: 1000 * 60 * 60,
+        originalMaxAge: 1000 * 60 * 60,
         httpOnly:true
     }
 })
@@ -42,7 +42,10 @@ app.use(csrf())
 app.use(helmet()) 
 app.use(csrfMiddlware)
 app.use(checkCRSUF)
+app.use(middlewareGlobal)
 app.use(routes)
+
+
 
 
 app.set('views' , path.resolve(__dirname, 'src','views'))

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+    <title>Agenda</title>
+</head>
+<body class='body-contact'>
+    <header class='header-contact'>
+        <h1 class='title-contact'>Olá <%= user.name %> </h1>
+
+        <% if(user){ %>
+        <a href="login/logout" class='logout'>Sair</a>
+        <% }  else { %> 
+        <a href="login/index">Entrar</a>
+        <% }%>
+    </header>
+   <% if(contatos.length) {%>
+        <table>
+            <thead> 
+           <tr>
+                <td>Nome</td>
+                <td>Email</td>
+                <td>Telefone</td>
+                <td colspan="2"><a  href="contato/index" class='adicionar'>Adicionar Novo</a></td>
+            </tr>
+           </thead>
+          
+        <% contatos.forEach(contato=>{ %>
+        <tr>
+            <td> <%=contato.name %> </td>
+            <td> <%=contato.email%> </td>
+            <td> <%=contato.phone%> </td>
+            <td class='editar'><a href="/contato/index/<%= contato._id %>">Editar</a></td>
+            <td class='excluir'><a href='/contato/delete/<%= contato._id %>'>Excluir</a></td>
+        </tr>
+        <%})%>
+      </table>
+      <%} else{%>
+        <div class='empty-contact'>
+            <h3>Agenda Vazia</h3>
+            <button class='adicionar'><a  href="contato/index">Adicionar</a></button>
+        </div>
+      <% }%>
+    <%-include('includes/Footer')%>
+
+
+</body>
+<script src="./assets/js/bundle.js"></script>
+</html>

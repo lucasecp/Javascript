@@ -1,0 +1,17 @@
+
+<div class='errors'>
+  <% if(errors.length > 0){%>
+    <% for(let error of errors){%>
+    <div class='error-msg'>
+      <%= error %>
+    </div>
+    <% }} %>
+    
+    <% if(success.length > 0){%>
+        <% for(let msg of success){%>
+        <div class='success-msg'>
+          <%= msg %>
+        </div>
+        <% }} %>
+        
+</div>

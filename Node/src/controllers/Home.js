@@ -1,7 +1,8 @@
+const contato =  require('../model/Contatos')
 
-exports.home = (req,res)=>{
-   res.render('index')
+module.exports = async (req,res)=>{
+   const contatos = await contato.findUser()
+   if(req.session.user) return res.render('user-index',{contatos})
+   else return res.render('index')
 }
-exports.homePost=(req,res)=>{
-   res.send(req.body)
-} 
+  

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+    <title>Contato</title>
+</head>
+<body class="body-form">
+    <header class="header-form" >
+        <h1>Novo Contato</h1>
+        <span><a href="/">Voltar</a></span>
+    </header>
+    
+   
+    <section class="section-form">
+    <%- include('includes/ErrorRegister')%> 
+    <% if(contato._id){%>
+        <form action="/contato/edit/<%=contato._id%>" method="POST" class='registro'>
+            <%} else{%>
+             <form action="/contato/register" method="POST" class='registro'>
+           <%}%>
+            
+             <input type="hidden" name='_csrf' value='<%=csrfToken%>' class="input-registro">
+             <input value="<%= contato.name %>" type="text" name='name'  placeholder="Nome" class="input-registro">
+             <input value="<%= contato.email %>" type="email" name='email' placeholder="Email"class="input-registro">
+             <input value="<%= contato.phone %>" type="number" name='phone' placeholder="Telefone"class="input-registro">
+             <button class='btn-registro'>Adicionar</button>
+         </form>
+    </section>
+  
+    <%- include('includes/Footer') %>
+
+</body>
+<script src="/assets/js/bundle.js"></script> 
+</html>

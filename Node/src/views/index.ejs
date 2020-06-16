@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('includes/Head') %> 
+<%- include('includes/Head') %>
 
 <body>
-<form action="/" method="POST">
-    
+    <header>
+        <h1 class='title'><a href="/">Minha Agenda</a></h1>
+        <form action="/login/user" method="POST" class="login">
+        <label for="email">Login:</label>
+        <input type="hidden" name='_csrf' value='<%=csrfToken%>' class='input-login'>
+        <input type="email" placeholder="Email" name="email" class='input-login'>
+        <input type="password" placeholder="Senha" name="password" class='input-login'>
+        <button class='input-btn'>Entrar</button>
+        <%- include('includes/ErrorLogin')%>
+        </form>
+    </header>
+          
+    <main>
+        <div class='div-main'>Organize seus contatos </div>
+        <div class='div-main'>Em sua agenda </div>
+    </main>
 
-<input type="hidden" name='_csrf' value='<%=csrfToken%>'>   
-<input type="text" name='name' placeholder="Nome">
-<input type="number" name='age' placeholder="Idade">
-<input type="text" name='email' placeholder="Email">
+    <section>
+        
+        <h3>Registre-se</h3>
+        <%- include('includes/ErrorRegister')%> 
+        <form action="/register" method="POST" class='registro'>
+            <input type="hidden" name='_csrf' value='<%=csrfToken%>' class="input-registro">
+            <input type="text" name='name' placeholder="Nome" class="input-registro">
+            <input type="email" name='email' placeholder="Email"class="input-registro">
+            <input type="password" name='password' placeholder="Senha"class="input-registro">
+            <button class='btn-registro'>Entrar</button>
+        </form>
 
-<button>Entrar</button>
-</form>
+    </section>
+
+    <%-include('includes/Footer')%>
 
 </body>
-<script src="./assets/js/bundle.js"></script>
+<script src="/assets/js/bundle.js"></script>
 
 </html>
